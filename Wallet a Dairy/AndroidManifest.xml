@@ -129,6 +129,10 @@
             android:name="com.bdpartener.wallet.CategoryBudget"
             android:label="Budget Category" >
         </activity>
+        <activity
+            android:name=".Logout"
+            android:label="lol" >
+        </activity>
     </application>
 
 </manifest>

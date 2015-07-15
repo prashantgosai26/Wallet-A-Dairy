@@ -28,7 +28,7 @@ public class BaseActivity extends Activity {
 	private static boolean isLaunch = true;
 	private DrawerLayout mDrawerLayout;
 	private ActionBarDrawerToggle actionBarDrawerToggle;
-	SessionManager manager;
+//	SessionManager manager;
 	
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB) @SuppressLint({ "NewApi", "ResourceAsColor" }) @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,8 @@ public class BaseActivity extends Activity {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 //		mDrawerList.setBackgroundColor(R.color.mDrawerList);
-		manager = new SessionManager(getApplicationContext());
-		manager.checkLogin();
+//		manager = new SessionManager(getApplicationContext());
+//		manager.checkLogin();
 		// set a custom shadow that overlays the main content when the drawer opens
 		//mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         
@@ -125,8 +125,9 @@ public class BaseActivity extends Activity {
 //			startActivity(new Intent(this, Login.class));
 			break;
 		case 5:
-			manager.logoutUser();
-			startActivity(new Intent(this, Login.class));
+			startActivity(new Intent(this,Logout.class));
+//			manager.logoutUser();
+//			startActivity(new Intent(this, Login.class));
 			break;
 
 		default:

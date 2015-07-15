@@ -8,6 +8,7 @@ import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -32,7 +33,8 @@ public class Login extends Activity {
 	String[] pass_array = new String[10];
 	EditText email, pass;
 	ActionBar abobj;
-	SessionManager manager;
+	public static final String PREFS_NAME = "LoginPrefs";
+//	SessionManager manager;
 	Button btnforgatpass, btnregister, btnlogin;
 
 	@SuppressLint("NewApi")
@@ -46,10 +48,16 @@ public class Login extends Activity {
 		pass = (EditText) findViewById(R.id.etPassword_login);
 		sqldb = openOrCreateDatabase("MyMoney",
 				SQLiteDatabase.CREATE_IF_NECESSARY, null);
-		manager = new SessionManager(getApplicationContext());
+//		manager = new SessionManager(getApplicationContext());
 		btnlogin = (Button) findViewById(R.id.btnSubmit_login);
 		btnforgatpass = (Button) findViewById(R.id.btnforgot_login);
 		btnregister = (Button) findViewById(R.id.btnRegistration_login);
+		
+		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.getString("logged", "").toString().equals("logged")) {
+            Intent intent = new Intent(Login.this, Home.class);
+            startActivity(intent);
+        }
 		btnforgatpass.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -84,9 +92,13 @@ public class Login extends Activity {
 									Toast.makeText(getApplicationContext(),
 											"Login Successfull",
 											Toast.LENGTH_SHORT).show();
-									manager.createLoginSession("name",email_edittext);
+									SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+			                        SharedPreferences.Editor editor = settings.edit();
+			                        editor.putString("logged", "logged");
+			                        editor.commit();
+//									manager.createLoginSession("name",email_edittext);
 									Intent cat = new Intent(getApplicationContext(),
-											IncomeAdd.class);
+											Transaction_Expense.class);
 									startActivity(cat);
 									c.close();
 									break;
@@ -97,7 +109,7 @@ public class Login extends Activity {
 									Toast.makeText(getApplicationContext(),
 											"Login success", Toast.LENGTH_SHORT)
 											.show();
-									manager.createLoginSession("name",email_edittext);
+//									manager.createLoginSession("name",email_edittext);
 									Intent cat = new Intent(getApplicationContext(),
 											IncomeAdd.class);
 									startActivity(cat);
@@ -120,6 +132,7 @@ public class Login extends Activity {
 
 			}
 		});
+		
 		btnregister.setOnClickListener(new OnClickListener() {
 
 			@Override
