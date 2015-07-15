@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class BaseActivity extends Activity {
+
+	public static final String PREFS_NAME = "LoginPrefs";
 
 	protected FrameLayout frameLayout;
 	protected ListView mDrawerList;
@@ -125,9 +128,14 @@ public class BaseActivity extends Activity {
 //			startActivity(new Intent(this, Login.class));
 			break;
 		case 5:
-			startActivity(new Intent(this,Logout.class));
+			SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.remove("logged");
+            editor.commit();
+            finish();
+//			startActivity(new Intent(this,Logout.class));
 //			manager.logoutUser();
-//			startActivity(new Intent(this, Login.class));
+			startActivity(new Intent(this, Login.class));
 			break;
 
 		default:
