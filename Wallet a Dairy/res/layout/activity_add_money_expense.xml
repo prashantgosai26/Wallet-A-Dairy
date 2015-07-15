@@ -1,0 +1,185 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AddMoney" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_centerHorizontal="true"
+        >
+
+        <RelativeLayout
+            android:id="@+id/addmoney"
+            android:layout_width="fill_parent"
+            android:layout_height="404dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_layout" >
+
+            <ImageView
+                android:id="@+id/imgcategory_addmoneyex"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/in_category" />
+
+            <View
+                android:id="@+id/View02"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@+id/imgcategory_addmoneyex"
+                android:layout_below="@+id/imgcategory_addmoneyex"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="5dp"
+                android:background="#DEA312" />
+
+            <View
+                android:id="@+id/View023"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@+id/View03"
+                android:layout_below="@+id/imgnote_addmoney"
+                android:layout_marginTop="5dp"
+                android:background="#DEA312" />
+
+            <Button
+                style="@style/btnStyleOrange"
+                android:id="@+id/btncancel_expense_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/btnSubmit_addmoney"
+                android:layout_below="@+id/btnSubmit_addmoney"
+                android:layout_marginTop="10dp"
+                android:text="Cancel"
+                android:textSize="25dp" />
+
+            <RelativeLayout
+                android:id="@+id/rldate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                
+                android:layout_alignLeft="@+id/ednote_addmoneyex"
+                android:layout_below="@+id/View023"
+                android:layout_marginTop="10dp"
+                 >
+
+                <!-- <TextView -->
+                <!-- android:id="@+id/tvday" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_alignParentLeft="true" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:layout_marginLeft="5dp" -->
+                <!-- android:text="44" -->
+                <!-- android:textAppearance="?android:attr/textAppearanceLarge" /> -->
+
+
+                <!-- <TextView -->
+                <!-- android:id="@+id/tvmonth" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:layout_marginLeft="5dp" -->
+                <!-- android:layout_toRightOf="@+id/tvday" -->
+                <!-- android:text="December" -->
+                <!-- android:textAppearance="?android:attr/textAppearanceSmall" /> -->
+
+
+                <!-- <TextView -->
+                <!-- android:id="@+id/tvyear" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:layout_marginLeft="5dp" -->
+                <!-- android:layout_toRightOf="@+id/tvmonth" -->
+                <!-- android:text="2015" -->
+                <!-- android:textAppearance="?android:attr/textAppearanceMedium" /> -->
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="31/12/2015"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/View03"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@+id/View02"
+                android:layout_below="@+id/View02"
+                android:layout_marginTop="52dp"
+                android:background="#DEA312" />
+
+            <EditText
+                android:id="@+id/edamount_addmoneyex"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ednote_addmoneyex"
+                android:layout_alignLeft="@+id/View03"
+                android:ems="20"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:hint="Amount"
+                android:textSize="22dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/tvcategoryname_addmoneyex"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_above="@+id/View02"
+                android:layout_alignLeft="@+id/ednote_addmoneyex"
+                android:hint="Category Name"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/ednote_addmoneyex"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/View023"
+                android:layout_below="@+id/View03"
+                android:layout_marginTop="14dp"
+                android:ems="20"
+                android:gravity="center"
+                android:hint="Note"
+                android:textSize="22dp" />
+
+            <ImageView
+                android:id="@+id/imgnote_addmoney"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/ednote_addmoneyex"
+                android:layout_alignLeft="@+id/imgcategory_addmoneyex"
+                android:src="@drawable/edit" />
+
+            <Button
+                style="@style/btnStyleOrange"
+                android:id="@+id/btnSubmit_addmoney"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rldate"
+                android:layout_centerHorizontal="true"
+                android:text="Submit"
+                android:layout_marginTop="10dp"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

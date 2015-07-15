@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/menu_addwallet"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Add Wallet"/>
+    
+    <item
+        android:id="@+id/menu_addmoney"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Add Money"/>
+    
+    <item
+        android:id="@+id/menu_transaction"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Transaction"/>
+
+</menu>
