@@ -269,15 +269,18 @@ public final class R {
         public static final int date_display_addmoney=0x7f030018;
         public static final int display_transaction_component=0x7f030019;
         public static final int drawer_list_item=0x7f03001a;
-        public static final int listviewitems=0x7f03001b;
-        public static final int listviewitemsreport=0x7f03001c;
-        public static final int logout_file=0x7f03001d;
-        public static final int navigation_drawer_base_layout=0x7f03001e;
-        public static final int spinner_category_control=0x7f03001f;
-        public static final int spinner_currency_control=0x7f030020;
-        public static final int spinner_question_control=0x7f030021;
-        public static final int spinner_view=0x7f030022;
-        public static final int update_transcation=0x7f030023;
+        public static final int fragment_blank_a=0x7f03001b;
+        public static final int fragment_blank_b=0x7f03001c;
+        public static final int listviewitems=0x7f03001d;
+        public static final int listviewitemsreport=0x7f03001e;
+        public static final int logout_file=0x7f03001f;
+        public static final int navigation_drawer_base_layout=0x7f030020;
+        public static final int spinner_category_control=0x7f030021;
+        public static final int spinner_currency_control=0x7f030022;
+        public static final int spinner_question_control=0x7f030023;
+        public static final int spinner_view=0x7f030024;
+        public static final int swipetab=0x7f030025;
+        public static final int update_transcation=0x7f030026;
     }
     public static final class menu {
         public static final int add_money=0x7f080000;

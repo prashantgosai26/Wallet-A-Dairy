@@ -44,7 +44,10 @@ public class Home extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home);
+//		setContentView(R.layout.activity_home);
+		getLayoutInflater().inflate(R.layout.activity_home, frameLayout);
+		mDrawerList.setItemChecked(position, true);
+		setTitle(listArray[position]);
 		mDrawerList.setItemChecked(position, true);
 		setTitle(listArray[position]);
 		initControl();

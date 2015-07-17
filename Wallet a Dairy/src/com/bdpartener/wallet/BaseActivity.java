@@ -112,7 +112,7 @@ public class BaseActivity extends Activity {
 		switch (position) {
 		case 0:
 			Toast.makeText(getApplicationContext(), "HOME.....HOME", Toast.LENGTH_LONG).show();
-			startActivity(new Intent(this, Transaction_Expense.class));
+			startActivity(new Intent(this, Home.class));
 			break;
 		case 1:
 			startActivity(new Intent(this, IncomeAdd.class));
@@ -124,8 +124,8 @@ public class BaseActivity extends Activity {
 			startActivity(new Intent(this, BudgetAdd.class));
 			break;
 		case 4:
-		Toast.makeText(getApplicationContext(), "record", Toast.LENGTH_LONG).show();
-//			startActivity(new Intent(this, Login.class));
+//		Toast.makeText(getApplicationContext(), "record", Toast.LENGTH_LONG).show();
+			startActivity(new Intent(this, SwipeTab.class));
 			break;
 		case 5:
 			SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
