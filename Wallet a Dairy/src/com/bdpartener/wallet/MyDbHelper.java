@@ -1,12 +1,10 @@
 package com.bdpartener.wallet;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class MyDbHelper extends SQLiteOpenHelper {
 
@@ -51,45 +49,15 @@ public class MyDbHelper extends SQLiteOpenHelper {
 			+ " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_MONTH
 			+ "TEXT, " + COL_YEAR + "INTEGER, " + COL_TOTAL + " FLOAT);";
 
-//	 public static final String TABLE_REGISTRATION = "Registration";
-//	 public static final String COL_EMAIL = "email";
-//	 public static final String COL_PASS = "password";
-//	 public static final String COL_QUE = "question";
-//	 public static final String COL_ANS = "answer";
-//	 private static final String STRING_CREATE_TABLE_REGISTRATION =
-//	 "CREATE TABLE " + TABLE_REGISTRATION
-//	 + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_EMAIL
-//	 + " TEXT," + COL_PASS + " TEXT," + COL_QUE + "TEXT," + COL_ANS + "TEXT);";
-	//
-	// public static final String TABLE_CAT_INTREST = "Intrest";
-	// public static final String COL_DATE_INTREST = "iDate";
-	// public static final String COL_AMOUNT_INTREST= "iAmount";
-	// private static final String STRING_CREATE_TABLE_CAT_INTREST =
-	// "CREATE TABLE " + TABLE_CAT_INTREST
-	// + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_DATE_INTREST
-	// + " DATE," + COL_AMOUNT_INTREST+ " INTEGER);";
-	//
-	// public static final String TABLE_CAT_SALARY = "Salary";
-	// public static final String COL_DATE_SALARY = "sDate";
-	// public static final String COL_AMOUNT_SALARY= "sAmount";
-	// private static final String STRING_CREATE_TABLE_CAT_SALARY =
-	// "CREATE TABLE " + TABLE_CAT_SALARY
-	// + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_DATE_SALARY
-	// + " DATE," + COL_AMOUNT_SALARY+ " INTEGER);";
-	//
-	// public static final String TABLE_CAT_SALE = "Sale";
-	// public static final String COL_DATE_SALE = "sDate";
-	// public static final String COL_AMOUNT_SALE= "sAmount";
-	// private static final String STRING_CREATE_TABLE_CAT_SALE =
-	// "CREATE TABLE " + TABLE_CAT_SALE
-	// + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_DATE_SALE
-	// + " DATE," + COL_AMOUNT_SALE+ " INTEGER);";
-	//
-	// String expense_name[] = { "Baby", "Education", "Electricity",
-	// "Entertainment", "Finance", "Food", "Helth", "Internet",
-	// "Ornament", "Transportation", "Trip", "Vacation" };
-	// String income_name[] = { "Event", "Intrest Money", "Salary", "Sale" };
-	//
+	public static final String TABLE_REGISTRATION = "Registration";
+	public static final String COL_EMAIL = "email";
+	public static final String COL_PASS = "password";
+	public static final String COL_QUE = "question";
+	public static final String COL_ANS = "answer";
+	private static final String STRING_CREATE_R = "CREATE TABLE "+ TABLE_REGISTRATION
+			+ " (_id INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_EMAIL
+			+ " TEXT," + COL_PASS + " TEXT," + COL_QUE + "TEXT," + COL_ANS + "TEXT);";
+
 
 	public MyDbHelper(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);
@@ -97,11 +65,14 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		ContentValues cv = new ContentValues();
+		Log.d("PAG", "OnCreate Method is calling");
 		db.execSQL(STRING_CREATE_E);
 		db.execSQL(STRING_CREATE_I);
 		db.execSQL(STRING_CREATE_B);
 		db.execSQL(STRING_CREATE_T);
+		db.execSQL(STRING_CREATE_R);
+
+		ContentValues cv = new ContentValues();
 		cv.put(COL_TOTAL, 0);
 		db.insert(TABLE_TOTAL, null, cv);
 		// db.execSQL(STRING_CREATE_TABLE_CAT_EVENT);
@@ -112,10 +83,12 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		Log.d("PAG", "OnUpgrade Method is calling");
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_INCOME);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_EXPENSE);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TOTAL);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUDGET);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_REGISTRATION);
 		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAT_INTREST);
 		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAT_EVENT);
 		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAT_SALARY);

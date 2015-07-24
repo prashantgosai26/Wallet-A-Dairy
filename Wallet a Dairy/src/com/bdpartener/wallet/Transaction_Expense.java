@@ -23,6 +23,7 @@ public class Transaction_Expense extends BaseActivity {
 
 	ListView lvExpense;
 	SQLiteDatabase sqldb;
+	MyDbHelper mHelper;
 	Cursor cursor;
 	TextView tvTotalExpense;
 	SimpleAdapter simple;
@@ -40,8 +41,10 @@ public class Transaction_Expense extends BaseActivity {
 		getLayoutInflater().inflate(R.layout.activity_display_transaction_expense, frameLayout);
 		mDrawerList.setItemChecked(position, true);
 		setTitle(listArray[position]);
-		sqldb = openOrCreateDatabase("MyMoney",
-				SQLiteDatabase.CREATE_IF_NECESSARY, null);
+		mHelper = new MyDbHelper(this);
+		sqldb = mHelper.getReadableDatabase();
+//		sqldb = openOrCreateDatabase("MyMoney",
+//				SQLiteDatabase.CREATE_IF_NECESSARY, null);
 		lvExpense = (ListView) findViewById(R.id.lvAllExpenseRecord);
 		arrayList = new ArrayList<HashMap<String,Object>>();
 		cal = Calendar.getInstance();

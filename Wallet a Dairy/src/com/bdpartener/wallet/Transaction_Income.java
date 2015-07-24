@@ -27,6 +27,7 @@ public class Transaction_Income extends BaseActivity {
 
 	ListView lvIncome;
 	SQLiteDatabase sqldb;
+	MyDbHelper mHelper;
 	Cursor cursor;
 	TextView tvTotalIncome;
 	SimpleAdapter simple;
@@ -44,8 +45,10 @@ public class Transaction_Income extends BaseActivity {
 		getLayoutInflater().inflate(R.layout.activity_display_transaction_income, frameLayout);
 		mDrawerList.setItemChecked(position, true);
 		setTitle(listArray[position]);
-		sqldb = openOrCreateDatabase("MyMoney",
-				SQLiteDatabase.CREATE_IF_NECESSARY, null);
+		mHelper = new MyDbHelper(this);
+		sqldb = mHelper.getReadableDatabase();
+//		sqldb = openOrCreateDatabase("MyMoney",
+//				SQLiteDatabase.CREATE_IF_NECESSARY, null);
 		lvIncome = (ListView) findViewById(R.id.lvAllIncomeRecord);
 		arrayList = new ArrayList<HashMap<String, Object>>();
 		cal = Calendar.getInstance();

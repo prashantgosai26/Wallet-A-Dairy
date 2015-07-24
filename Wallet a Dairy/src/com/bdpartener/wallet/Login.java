@@ -25,9 +25,10 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class Login extends Activity {
 
-	SQLiteDatabase sqldb;
+	SQLiteDatabase sqldb,mDBr;
 	String semail, spass;
 	Cursor c;
+	MyDbHelper mHelper;
 	int count = 3;
 	String[] email_array = new String[10];
 	String[] pass_array = new String[10];
@@ -44,6 +45,7 @@ public class Login extends Activity {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.activity_login);
 		super.onCreate(savedInstanceState);
+		mHelper=new MyDbHelper(this);
 		email = (EditText) findViewById(R.id.etemail_login);
 		pass = (EditText) findViewById(R.id.etPassword_login);
 		sqldb = openOrCreateDatabase("MyMoney",
@@ -76,6 +78,7 @@ public class Login extends Activity {
 				// TODO Auto-generated method stub
 				String email_edittext = email.getText().toString();
 				String pass_edittext = pass.getText().toString();
+//				mDBr=mHelper.getReadableDatabase();
 				c = sqldb.rawQuery("select * from registers", null);
 				boolean flag = true;
 				if (c != null) {

@@ -34,7 +34,6 @@ public class ForgotPassword extends Activity {
 			"What is the first friend name?",
 			"What is the last Name of your Father?" };
 
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

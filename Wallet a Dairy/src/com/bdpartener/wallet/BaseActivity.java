@@ -26,7 +26,7 @@ public class BaseActivity extends Activity {
 
 	protected FrameLayout frameLayout;
 	protected ListView mDrawerList;
-	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Record","Log Out" };
+	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Expense Record", "Income_ Record", "Budget Record","Log Out" };
 	protected static int position;
 	private static boolean isLaunch = true;
 	private DrawerLayout mDrawerLayout;
@@ -111,7 +111,6 @@ public class BaseActivity extends Activity {
 		
 		switch (position) {
 		case 0:
-			Toast.makeText(getApplicationContext(), "HOME.....HOME", Toast.LENGTH_LONG).show();
 			startActivity(new Intent(this, Home.class));
 			break;
 		case 1:
@@ -125,9 +124,15 @@ public class BaseActivity extends Activity {
 			break;
 		case 4:
 //		Toast.makeText(getApplicationContext(), "record", Toast.LENGTH_LONG).show();
-			startActivity(new Intent(this, SwipeTab.class));
+			startActivity(new Intent(this, Transaction_Expense.class));
 			break;
 		case 5:
+			startActivity(new Intent(this, Transaction_Income.class));
+			break;
+		case 6:
+			startActivity(new Intent(this, Transaction_Budget.class));
+			break;
+		case 7:
 			SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.remove("logged");

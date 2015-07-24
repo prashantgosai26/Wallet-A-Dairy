@@ -32,6 +32,7 @@ public class Home extends BaseActivity {
 	MyDbHelper mHelper;
 	SQLiteDatabase mDbR, mDbW, sqldb;
 	Cursor mCursor;
+	
 	float Total = 0.0f, eTotal = 0.0f, iTotal = 0.0f, Remain = 0.0f;
 	String cat_name[] = new String[5];
 	float amount[] = new float[5];
@@ -48,8 +49,7 @@ public class Home extends BaseActivity {
 		getLayoutInflater().inflate(R.layout.activity_home, frameLayout);
 		mDrawerList.setItemChecked(position, true);
 		setTitle(listArray[position]);
-		mDrawerList.setItemChecked(position, true);
-		setTitle(listArray[position]);
+		mHelper=new MyDbHelper(this);
 		initControl();
 		
 //		countRemain();

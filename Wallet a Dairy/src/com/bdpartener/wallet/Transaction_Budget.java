@@ -25,6 +25,7 @@ public class Transaction_Budget extends BaseActivity {
 
 	ListView lvbudget;
 	SQLiteDatabase sqldb;
+	MyDbHelper mHelper;
 	Cursor cursor;
 	TextView tvTotalBudget;
 	SimpleAdapter simple;
@@ -44,8 +45,10 @@ public class Transaction_Budget extends BaseActivity {
 		mDrawerList.setItemChecked(position, true);
 		setTitle(listArray[position]);
 		
-		sqldb = openOrCreateDatabase("MyMoney",
-				SQLiteDatabase.CREATE_IF_NECESSARY, null);
+		mHelper = new MyDbHelper(this);
+		sqldb = mHelper.getReadableDatabase();
+//		sqldb = openOrCreateDatabase("MyMoney",
+//				SQLiteDatabase.CREATE_IF_NECESSARY, null);
 		lvbudget = (ListView) findViewById(R.id.lvAllBudgetRecord);
 		arrayList = new ArrayList<HashMap<String, Object>>();
 		cal = Calendar.getInstance();

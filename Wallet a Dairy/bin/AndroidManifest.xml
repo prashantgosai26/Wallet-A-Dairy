@@ -60,7 +60,7 @@
             android:label="@string/title_activity_add_money" >
         </activity>
         <activity
-            android:name=".SwipeTab"
+            android:name=".MainActivity"
             android:label="Category" >
         </activity>
         <activity

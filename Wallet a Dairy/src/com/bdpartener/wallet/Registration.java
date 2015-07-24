@@ -15,6 +15,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
@@ -42,13 +43,13 @@ import android.widget.Toast;
 
 public class Registration extends Activity {
 
-	MyDbHelper dbHelper;
+	MyDbHelper mHelper;
 	EditText edemail, edpassword, edconfpassword, edanswer;
 	Spinner spcurrency, spquestion;
 	AlertDialog ad;
 	ActionBar abobj;
 	Button btnSubmit, btnCancel;
-	SQLiteDatabase sqldb;
+	SQLiteDatabase sqldb,mDBw;
 	String create, insert, select, update;
 	ArrayList<HashMap<String, Object>> arylist_cur, arylist_que;
 
@@ -101,7 +102,7 @@ public class Registration extends Activity {
 		edanswer = (EditText) findViewById(R.id.etAnswer);
 		arylist_cur = new ArrayList<HashMap<String, Object>>();
 		arylist_que = new ArrayList<HashMap<String, Object>>();
-		dbHelper = new MyDbHelper(this);
+		mHelper = new MyDbHelper(this);
 		sqldb = openOrCreateDatabase("MyMoney",
 				SQLiteDatabase.CREATE_IF_NECESSARY, null);
 
@@ -142,10 +143,19 @@ public class Registration extends Activity {
 	private void insertIntoDatabase(String editEmail, String editPassword,
 			String spquestion, String editAnswer) {
 		// TODO Auto-generated method stub
+//		mDBw = mHelper.getWritableDatabase();
 		String email = editEmail;
 		String password = editPassword;
 		String question = spquestion;
 		String answer = editAnswer;
+//		
+//		ContentValues cv = new ContentValues(4);
+//		cv.put(MyDbHelper.COL_ANS, answer);
+//		cv.put(MyDbHelper.COL_PASS, password);
+//		cv.put(MyDbHelper.COL_EMAIL, email);
+//		cv.put(MyDbHelper.COL_QUE, question);
+//		
+//		mDBw.insert(MyDbHelper.TABLE_REGISTRATION, null, cv);
 		insert = "insert into registers values('" + email + "','" + password
 				+ "','" + question + "','" + answer + "');";
 		sqldb.execSQL(insert);
@@ -153,6 +163,7 @@ public class Registration extends Activity {
 				Toast.LENGTH_SHORT).show();
 		Intent i = new Intent(getApplicationContext(), Login.class);
 		startActivity(i);
+//		mDBw.close();
 	}
 
 	private void displayRecord() {
@@ -179,6 +190,7 @@ public class Registration extends Activity {
 				final String spQuestion = spquestion.getSelectedItem()
 						.toString();
 				final String editAnswer = edanswer.getText().toString();
+				
 				if (!isValidEmail(editEmail)) {
 					edemail.setError("Invalid Email");
 				} else if (!isValidPassword(editPassword)) {
@@ -219,22 +231,6 @@ public class Registration extends Activity {
 		View vi = li.inflate(R.layout.spinner_view, null);
 		ListView lv = (ListView) vi.findViewById(R.id.lvCurrencyDisplayView);
 
-		// Add currency image and name into hash map and add hash map into
-		// arraylist
-//		for (int i = 0; i < cur_img.length; ++i) {
-//			HashMap<String, Object> h_map = new HashMap<String, Object>();
-//			h_map.put("cur_img", cur_img[i]);
-//			h_map.put("cur_name", cur_name[i]);
-//			arylist_cur.add(h_map);
-//		}
-//		String from_cur[] = { "cur_img", "cur_name" };
-//		int to_cur[] = { R.id.imageView1, R.id.textView1 };
-//
-//		// simple adpter for display currency into spinner
-//		SimpleAdapter simadp = new SimpleAdapter(getApplicationContext(),
-//				arylist_cur, R.layout.spinner_currency_control, from_cur,
-//				to_cur);
-//		spcurrency.setAdapter(simadp);
 
 		// Add question name into hash map and add hash map into arraylist
 		for (int i = 0; i < que_name.length; ++i) {
@@ -269,12 +265,6 @@ public class Registration extends Activity {
 	        backButtonCount++;
 	    }
 		super.onBackPressed();
-	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
 
 }
