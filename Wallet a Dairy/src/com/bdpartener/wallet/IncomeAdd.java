@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.google.android.gms.drive.internal.h;
 import com.revmob.RevMob;
 import com.revmob.RevMobAdsListener;
 import com.revmob.ads.fullscreen.RevMobFullscreen;
@@ -54,10 +55,9 @@ public class IncomeAdd extends BaseActivity  implements View.OnClickListener{
 	Cursor mCursor;
 	SimpleCursorAdapter mAdapter;
 	int Total, Amt_Income;
-	RevMobFullscreen fullscreen;
-RevMobAdsListener adsListener;
-	
-	@Override
+	private RevMob revMob;
+	private RevMobFullscreen fullscreen;
+    	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 //		setContentView(R.layout.activity_add_money_income);
@@ -76,8 +76,9 @@ RevMobAdsListener adsListener;
 		tvdate.setOnClickListener(this);
 		tvdate.setText(dateFormat.format(calendar.getTime())); // Insert 'now'
 		
-		RevMob revMob = RevMob.start(this,null);
+		revMob = RevMob.start(this);
 		fullscreen = revMob.createFullscreen(this, null);
+		
 		// date
 		imgviewsetcatagory_image = (ImageView) findViewById(R.id.imgcategory_addmoneyin);
 
@@ -86,11 +87,13 @@ RevMobAdsListener adsListener;
 		setcategory();
 	}
 
+	
+
 	@Override
 	public void onBackPressed() {
 	        super.onBackPressed();
-	        Intent intent = new Intent(getApplicationContext(), Transaction_Expense.class);
-	        startActivity(intent);
+//	        Intent intent = new Intent(getApplicationContext(), Transaction_Expense.class);
+//	        startActivity(intent);
 	}
 	
 	private void setdate() {
@@ -179,7 +182,7 @@ RevMobAdsListener adsListener;
 
 				}
 			}else{}
-
+			   fullscreen.show(); // call it wherever you want to show the fullscreen ad
 			// mDbW.insert(cat_table, null, cvC);
 			edamount.setText(null);
 			ednote.setText(null);
@@ -189,72 +192,8 @@ RevMobAdsListener adsListener;
 			mDbR.close();
 			mDbW.close();
 
-			fullscreen.show();		
-//			adsListener = new RevMobAdsListener() {
-//				
-//				@Override
-//				public void onRevMobSessionNotStarted(String arg0) {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobSessionIsStarted() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobEulaWasRejected() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobEulaWasAcceptedAndDismissed() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobEulaIsShown() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobAdReceived() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobAdNotReceived(String arg0) {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobAdDisplayed() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobAdDismiss() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//				@Override
-//				public void onRevMobAdClicked() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//			};
-//			Intent intent = new Intent(IncomeAdd.this, TabBar_Display.class);
-//			intent.putExtra("income", "income");
-//			startActivity(intent);
+					
+			
 		} else if (view == tvdate) {
 			dialog.show();
 		} else {

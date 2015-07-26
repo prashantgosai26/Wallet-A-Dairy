@@ -26,7 +26,7 @@ public class BaseActivity extends Activity {
 
 	protected FrameLayout frameLayout;
 	protected ListView mDrawerList;
-	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Expense Record", "Income_ Record", "Budget Record","Log Out" };
+	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Expense Record", "Income_ Record"};
 	protected static int position;
 	private static boolean isLaunch = true;
 	private DrawerLayout mDrawerLayout;
@@ -147,7 +147,7 @@ public class BaseActivity extends Activity {
 			break;
 		}
 		
-		Toast.makeText(this, "Selected Item Position::"+position, Toast.LENGTH_LONG).show();
+//		Toast.makeText(this, "Selected Item Position::"+position, Toast.LENGTH_LONG).show();
 	}
 
 	@Override

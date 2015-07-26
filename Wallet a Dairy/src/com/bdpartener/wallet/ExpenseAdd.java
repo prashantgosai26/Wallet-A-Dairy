@@ -127,8 +127,8 @@ public class ExpenseAdd extends BaseActivity implements View.OnClickListener {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent intent = new Intent(getApplicationContext(), Home.class);
-		startActivity(intent);
+//		Intent intent = new Intent(getApplicationContext(), Home.class);
+//		startActivity(intent);
 	}
 
 	@Override

@@ -83,8 +83,8 @@ public class BudgetAdd extends BaseActivity implements OnClickListener {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent intent = new Intent(getApplicationContext(), Transaction_Expense.class);
-        startActivity(intent);
+//		Intent intent = new Intent(getApplicationContext(), Transaction_Expense.class);
+//        startActivity(intent);
 	}
 	@Override
 	public void onClick(View view) {

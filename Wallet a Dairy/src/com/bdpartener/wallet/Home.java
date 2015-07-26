@@ -82,8 +82,8 @@ public class Home extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-//				Intent intent = new Intent(Home.this, TabBar_Display.class);
-//				startActivity(intent);
+				Intent intent = new Intent(Home.this, Transaction_Income.class);
+				startActivity(intent);
 			}
 		});
 		income.setOnClickListener(new OnClickListener() {
@@ -92,9 +92,9 @@ public class Home extends BaseActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-//				Intent intent = new Intent(Home.this, TabBar_Insert.class);
+				Intent intent = new Intent(Home.this, IncomeAdd.class);
 //				intent.putExtra("income", "income");
-//				startActivity(intent);
+				startActivity(intent);
 			}
 		});
 		expense.setOnClickListener(new OnClickListener() {
@@ -102,9 +102,9 @@ public class Home extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-//				Intent intent = new Intent(Home.this, TabBar_Insert.class);
+				Intent intent = new Intent(Home.this, ExpenseAdd.class);
 //				intent.putExtra("expense", "expense");
-//				startActivity(intent);
+				startActivity(intent);
 			}
 		});
 		budget.setOnClickListener(new OnClickListener() {
@@ -112,9 +112,9 @@ public class Home extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-//				Intent intent = new Intent(Home.this, TabBar_Insert.class);
+				Intent intent = new Intent(Home.this, BudgetAdd.class);
 //				intent.putExtra("budget", "budget");
-//				startActivity(intent);
+				startActivity(intent);
 				// Toast.makeText(getApplicationContext(), "Set Your budget",
 				// Toast.LENGTH_LONG).show();
 			}
@@ -124,7 +124,7 @@ public class Home extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				 Intent intent = new Intent(Home.this, Report.class);
+				 Intent intent = new Intent(Home.this, Transaction_Expense.class);
 				 startActivity(intent);
 //				Toast.makeText(getApplicationContext(), "Get Full Report",
 //						Toast.LENGTH_LONG).show();

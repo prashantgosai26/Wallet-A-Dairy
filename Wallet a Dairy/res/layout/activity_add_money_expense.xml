@@ -130,6 +130,7 @@
                 android:layout_above="@+id/ednote_addmoneyex"
                 android:layout_alignLeft="@+id/View03"
                 android:ems="20"
+                android:inputType="number"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:hint="Amount"

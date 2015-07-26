@@ -119,6 +119,7 @@
                 android:layout_below="@+id/View02"
                 android:layout_toRightOf="@+id/imgcategory_addmoneybd"
                 android:ems="20"
+                android:inputType="number"
                 android:gravity="center"
                 android:hint="Amount"
                 android:textSize="22dp" />

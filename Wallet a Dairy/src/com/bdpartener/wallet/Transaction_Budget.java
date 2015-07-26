@@ -139,8 +139,8 @@ public class Transaction_Budget extends BaseActivity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		Intent intent = new Intent(getApplicationContext(), Home.class);
-		startActivity(intent);
+//		Intent intent = new Intent(getApplicationContext(), Home.class);
+//		startActivity(intent);
 		super.onBackPressed();
 	}
 

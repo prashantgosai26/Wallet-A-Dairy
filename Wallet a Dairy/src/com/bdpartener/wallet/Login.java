@@ -2,7 +2,6 @@ package com.bdpartener.wallet;
 
 import java.util.HashMap;
 
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
@@ -25,7 +24,7 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class Login extends Activity {
 
-	SQLiteDatabase sqldb,mDBr;
+	SQLiteDatabase sqldb, mDBr;
 	String semail, spass;
 	Cursor c;
 	MyDbHelper mHelper;
@@ -35,7 +34,7 @@ public class Login extends Activity {
 	EditText email, pass;
 	ActionBar abobj;
 	public static final String PREFS_NAME = "LoginPrefs";
-//	SessionManager manager;
+	// SessionManager manager;
 	Button btnforgatpass, btnregister, btnlogin;
 
 	@SuppressLint("NewApi")
@@ -45,21 +44,21 @@ public class Login extends Activity {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.activity_login);
 		super.onCreate(savedInstanceState);
-		mHelper=new MyDbHelper(this);
+		mHelper = new MyDbHelper(this);
 		email = (EditText) findViewById(R.id.etemail_login);
 		pass = (EditText) findViewById(R.id.etPassword_login);
 		sqldb = openOrCreateDatabase("MyMoney",
 				SQLiteDatabase.CREATE_IF_NECESSARY, null);
-//		manager = new SessionManager(getApplicationContext());
+		// manager = new SessionManager(getApplicationContext());
 		btnlogin = (Button) findViewById(R.id.btnSubmit_login);
 		btnforgatpass = (Button) findViewById(R.id.btnforgot_login);
 		btnregister = (Button) findViewById(R.id.btnRegistration_login);
-		
+
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        if (settings.getString("logged", "").toString().equals("logged")) {
-            Intent intent = new Intent(Login.this, Home.class);
-            startActivity(intent);
-        }
+		if (settings.getString("logged", "").toString().equals("logged")) {
+			Intent intent = new Intent(Login.this, Home.class);
+			startActivity(intent);
+		}
 		btnforgatpass.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -78,7 +77,7 @@ public class Login extends Activity {
 				// TODO Auto-generated method stub
 				String email_edittext = email.getText().toString();
 				String pass_edittext = pass.getText().toString();
-//				mDBr=mHelper.getReadableDatabase();
+				// mDBr=mHelper.getReadableDatabase();
 				c = sqldb.rawQuery("select * from registers", null);
 				boolean flag = true;
 				if (c != null) {
@@ -95,12 +94,15 @@ public class Login extends Activity {
 									Toast.makeText(getApplicationContext(),
 											"Login Successfull",
 											Toast.LENGTH_SHORT).show();
-									SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-			                        SharedPreferences.Editor editor = settings.edit();
-			                        editor.putString("logged", "logged");
-			                        editor.commit();
-//									manager.createLoginSession("name",email_edittext);
-									Intent cat = new Intent(getApplicationContext(),
+									SharedPreferences settings = getSharedPreferences(
+											PREFS_NAME, 0);
+									SharedPreferences.Editor editor = settings
+											.edit();
+									editor.putString("logged", "logged");
+									editor.commit();
+									// manager.createLoginSession("name",email_edittext);
+									Intent cat = new Intent(
+											getApplicationContext(),
 											Transaction_Expense.class);
 									startActivity(cat);
 									c.close();
@@ -112,8 +114,9 @@ public class Login extends Activity {
 									Toast.makeText(getApplicationContext(),
 											"Login success", Toast.LENGTH_SHORT)
 											.show();
-//									manager.createLoginSession("name",email_edittext);
-									Intent cat = new Intent(getApplicationContext(),
+									// manager.createLoginSession("name",email_edittext);
+									Intent cat = new Intent(
+											getApplicationContext(),
 											IncomeAdd.class);
 									startActivity(cat);
 									c.close();
@@ -135,7 +138,7 @@ public class Login extends Activity {
 
 			}
 		});
-		
+
 		btnregister.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -148,22 +151,14 @@ public class Login extends Activity {
 		});
 
 	}
+
 	@Override
 	public void onBackPressed() {
-		int backButtonCount = 0;
-		// TODO Auto-generated method stub
-		if(backButtonCount >= 1)
-	    {
-	        Intent intent = new Intent(Intent.ACTION_MAIN);
-	        intent.addCategory(Intent.CATEGORY_HOME);
-	        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	        startActivity(intent);
-	    }
-	    else
-	    {
-	        Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
-	        backButtonCount++;
-	    }
+		this.finish();
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
 		super.onBackPressed();
 	}
 }

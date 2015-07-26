@@ -32,7 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:gravity="center"
-        android:text="Login Into MyMoney"
+        android:text="Login Into Wallet"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
 
