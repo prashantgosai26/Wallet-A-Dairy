@@ -26,7 +26,7 @@ public class BaseActivity extends Activity {
 
 	protected FrameLayout frameLayout;
 	protected ListView mDrawerList;
-	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Expense Record", "Income_ Record"};
+	protected String[] listArray = { "Home", "Income", "Expense", "Budget", "Expense Record", "Income_ Record","Logout"};
 	protected static int position;
 	private static boolean isLaunch = true;
 	private DrawerLayout mDrawerLayout;
@@ -130,19 +130,11 @@ public class BaseActivity extends Activity {
 			startActivity(new Intent(this, Transaction_Income.class));
 			break;
 		case 6:
-			startActivity(new Intent(this, Transaction_Budget.class));
-			break;
-		case 7:
-			SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.remove("logged");
-            editor.commit();
-            finish();
-//			startActivity(new Intent(this,Logout.class));
-//			manager.logoutUser();
-			startActivity(new Intent(this, Login.class));
-			break;
-
+			Logout.exitApplication(this);
+//			Intent intent = new Intent();
+//			startActivity(intent);
+//			break;
+			
 		default:
 			break;
 		}

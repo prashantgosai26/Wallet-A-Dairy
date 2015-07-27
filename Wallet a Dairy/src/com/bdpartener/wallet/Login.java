@@ -54,11 +54,11 @@ public class Login extends Activity {
 		btnforgatpass = (Button) findViewById(R.id.btnforgot_login);
 		btnregister = (Button) findViewById(R.id.btnRegistration_login);
 
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		if (settings.getString("logged", "").toString().equals("logged")) {
-			Intent intent = new Intent(Login.this, Home.class);
-			startActivity(intent);
-		}
+//		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+//		if (settings.getString("logged", "").toString().equals("logged")) {
+//			Intent intent = new Intent(Login.this, Home.class);
+//			startActivity(intent);
+//		}
 		btnforgatpass.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -94,12 +94,12 @@ public class Login extends Activity {
 									Toast.makeText(getApplicationContext(),
 											"Login Successfull",
 											Toast.LENGTH_SHORT).show();
-									SharedPreferences settings = getSharedPreferences(
-											PREFS_NAME, 0);
-									SharedPreferences.Editor editor = settings
-											.edit();
-									editor.putString("logged", "logged");
-									editor.commit();
+//									SharedPreferences settings = getSharedPreferences(
+//											PREFS_NAME, 0);
+//									SharedPreferences.Editor editor = settings
+//											.edit();
+//									editor.putString("logged", "logged");
+//									editor.commit();
 									// manager.createLoginSession("name",email_edittext);
 									Intent cat = new Intent(
 											getApplicationContext(),

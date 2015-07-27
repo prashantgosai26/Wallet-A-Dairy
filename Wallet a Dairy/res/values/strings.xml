@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <string name="app_name">My Money Pro</string>
+    <string name="app_name">Wallet a Dairy</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_categories">Category</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
     <string name="title_activity_registration">Registration</string>
@@ -27,5 +26,10 @@
     <string name="appSignature">dd2d41b69ac01b80f443f5b6cf06096d457f82bd</string>
     <string name="title_activity_report">Report</string>
     <string name="title_activity_base">BaseActivity</string>
-	<color name="mDrawerList">#e0341e</color>
+
+    <color name="mDrawerList">#e0341e</color>
+
+    <string name="title_activity_logout">Logout</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

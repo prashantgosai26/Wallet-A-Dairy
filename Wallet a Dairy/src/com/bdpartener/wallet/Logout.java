@@ -1,42 +1,32 @@
 package com.bdpartener.wallet;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 
-public class Logout extends Activity{
-	 public static final String PREFS_NAME = "LoginPrefs";
+public class Logout extends Activity {
 
-	    @Override
-	    public void onCreate(Bundle savedInstanceState) {
-	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.logout_file);
-	    
-	        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.remove("logged");
-            editor.commit();
-            finish();
-	    }
-
-//	    public boolean onCreateOptionsMenu(Menu menu) {
-//	        MenuInflater Inflater = getMenuInflater();
-//	        Inflater.inflate(R.menu., menu);
-//	        return true;
-//	    }
-
-//	    @Override
-//	    public boolean onOptionsItemSelected(MenuItem item) {
-//	        if (item.getItemId() == R.id.logout) {
-//	            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-//	            SharedPreferences.Editor editor = settings.edit();
-//	            editor.remove("logged");
-//	            editor.commit();
-//	            finish();
-//	        }
-//	        return super.onOptionsItemSelected(item);
-//	    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		 if(android.os.Build.VERSION.SDK_INT >= 21)
+	        {
+	        }
+	        else
+	        {
+	            finish();
+	        }
 	}
+	public static void exitApplication(Context context)
+    {
+        Intent intent = new Intent(context, Logout.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+
+        context.startActivity(intent);
+    }
+}

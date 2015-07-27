@@ -227,9 +227,9 @@ public class Registration extends Activity {
 	public void setCurrency() {
 
 		// layout inflater for display currency into view
-		LayoutInflater li = LayoutInflater.from(getApplicationContext());
-		View vi = li.inflate(R.layout.spinner_view, null);
-		ListView lv = (ListView) vi.findViewById(R.id.lvCurrencyDisplayView);
+//		LayoutInflater li = LayoutInflater.from(getApplicationContext());
+//		View vi = li.inflate(R.layout.spinner_view, null);
+//		ListView lv = (ListView) vi.findViewById(R.id.lvCurrencyDisplayView);
 
 
 		// Add question name into hash map and add hash map into arraylist
