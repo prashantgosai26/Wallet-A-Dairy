@@ -53,18 +53,6 @@ public class Registration extends Activity {
 	String create, insert, select, update;
 	ArrayList<HashMap<String, Object>> arylist_cur, arylist_que;
 
-	int cur_img[] = { R.drawable.dollar98, R.drawable.afghanistan1,
-			R.drawable.brazil1, R.drawable.cuba1, R.drawable.denmark1,
-			R.drawable.dollar98, R.drawable.euro30, R.drawable.iceland1,
-			R.drawable.india1, R.drawable.indonesia1, R.drawable.iran1,
-			R.drawable.kazakhstan1, R.drawable.laos1, R.drawable.malaysia1,
-			R.drawable.nepal1, R.drawable.netherlands1, R.drawable.norway1,
-			R.drawable.pakistan2, R.drawable.peru1, R.drawable.philippines1,
-			R.drawable.poland1, R.drawable.pound12, R.drawable.romania1,
-			R.drawable.russia1, R.drawable.sri2, R.drawable.sweden2,
-			R.drawable.switzerland1, R.drawable.taiwan1, R.drawable.thailand1,
-			R.drawable.turkey2, R.drawable.ukraine1, R.drawable.yen19,
-			R.drawable.zimbabwe1 };
 
 	String cur_name[] = { "Select Currency", "Afghanistan", "Brazil", "Cuba",
 			"Denmark", "United Kingdom", "Europe", "Iceland", "India",
