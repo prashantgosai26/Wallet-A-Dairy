@@ -23,7 +23,7 @@
     <ListView
         android:id="@+id/lvAllExpenseRecord"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="600dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/TextView06" >
     </ListView>

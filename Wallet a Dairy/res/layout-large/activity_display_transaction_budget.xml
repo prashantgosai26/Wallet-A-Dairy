@@ -17,16 +17,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="Budget"
+        
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
-
-    <ListView
-        android:id="@+id/lvAllBudgetRecord"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/TextView06" >
-    </ListView>
 
     <TextView
         android:id="@+id/tvBudgetTotal"
@@ -50,5 +43,13 @@
         android:text="Total"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
+
+    <ListView
+        android:id="@+id/lvAllBudgetRecord"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_alignLeft="@+id/TextView06"
+        android:layout_below="@+id/TextView06" >
+    </ListView>
 
 </RelativeLayout>
