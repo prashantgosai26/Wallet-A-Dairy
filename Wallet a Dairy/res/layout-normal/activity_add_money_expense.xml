@@ -15,17 +15,13 @@
             android:id="@+id/addmoney"
             android:layout_width="fill_parent"
             android:layout_height="404dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/rounded_layout" >
 
             <ImageView
                 android:id="@+id/imgcategory_addmoneyex"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:src="@drawable/in_category" />
@@ -40,35 +36,13 @@
                 android:layout_marginTop="5dp"
                 android:background="#DEA312" />
 
-            <View
-                android:id="@+id/View023"
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:layout_alignLeft="@+id/View03"
-                android:layout_below="@+id/imgnote_addmoney"
-                android:layout_marginTop="5dp"
-                android:background="#DEA312" />
-
-            <Button
-                style="@style/btnStyleOrange"
-                android:id="@+id/btncancel_expense_add"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignLeft="@+id/btnSubmit_addmoney"
-                android:layout_below="@+id/btnSubmit_addmoney"
-                android:layout_marginTop="10dp"
-                android:text="Cancel"
-                android:textSize="25dp" />
-
             <RelativeLayout
                 android:id="@+id/rldate"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                
                 android:layout_alignLeft="@+id/ednote_addmoneyex"
-                android:layout_below="@+id/View023"
-                android:layout_marginTop="10dp"
-                 >
+                android:layout_below="@+id/imgnote_addmoney"
+                android:layout_marginTop="10dp" >
 
                 <!-- <TextView -->
                 <!-- android:id="@+id/tvday" -->
@@ -101,86 +75,107 @@
                 <!-- android:layout_toRightOf="@+id/tvmonth" -->
                 <!-- android:text="2015" -->
                 <!-- android:textAppearance="?android:attr/textAppearanceMedium" /> -->
-
-                <TextView
-                    android:id="@+id/tvdate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:gravity="center"
-                    android:text="31/12/2015"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
             </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgnote_addmoney"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/ednote_addmoneyex"
+                android:layout_alignLeft="@+id/imgcategory_addmoneyex"
+                android:src="@drawable/edit" />
+
+            <TextView
+                android:id="@+id/tvcategoryname_addmoneyex"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/View02"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:hint="Select Category"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="22dp" />
 
             <View
                 android:id="@+id/View03"
                 android:layout_width="fill_parent"
                 android:layout_height="1dip"
-                android:layout_alignLeft="@+id/View02"
+                android:layout_alignLeft="@+id/edamount_addmoneyex"
                 android:layout_below="@+id/View02"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="60dp"
                 android:background="#DEA312" />
 
             <EditText
                 android:id="@+id/edamount_addmoneyex"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/ednote_addmoneyex"
-                android:layout_alignLeft="@+id/View03"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignBottom="@+id/View03"
+                android:layout_alignParentRight="true"
                 android:ems="20"
-                android:inputType="number"
-                android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:hint="Amount"
+                android:inputType="number"
                 android:textSize="22dp" >
 
                 <requestFocus />
             </EditText>
 
-            <TextView
-                android:id="@+id/tvcategoryname_addmoneyex"
-                android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/btncancel_expense_add"
+                style="@style/btnStyleOrange"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/btnSubmit_addmoney"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Cancel"
+                android:textSize="22dp" />
+
+            <Button
+                android:id="@+id/btnSubmit_addmoney"
+                style="@style/btnStyleOrange"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btncancel_expense_add"
+                android:layout_below="@+id/rldate"
+                android:layout_marginTop="54dp"
+                android:text="Submit"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/tvdate"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignLeft="@+id/btnSubmit_addmoney"
+                android:layout_below="@+id/rldate"
                 android:gravity="center"
-                android:layout_above="@+id/View02"
-                android:layout_alignLeft="@+id/ednote_addmoneyex"
-                android:hint="Category Name"
+                android:textSize="22sp"
+                android:text="31/12/2015"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/ednote_addmoneyex"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/View023"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
                 android:layout_below="@+id/View03"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="26dp"
                 android:ems="20"
                 android:gravity="center"
                 android:hint="Note"
                 android:textSize="22dp" />
 
-            <ImageView
-                android:id="@+id/imgnote_addmoney"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+            <View
+                android:id="@+id/View023"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
                 android:layout_alignBottom="@+id/ednote_addmoneyex"
-                android:layout_alignLeft="@+id/imgcategory_addmoneyex"
-                android:src="@drawable/edit" />
-
-            <Button
-                style="@style/btnStyleOrange"
-                android:id="@+id/btnSubmit_addmoney"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/rldate"
-                android:layout_centerHorizontal="true"
-                android:text="Submit"
-                android:layout_marginTop="10dp"
-                android:textSize="25dp" />
+                android:layout_alignLeft="@+id/View02"
+                android:layout_alignParentRight="true"
+                android:background="#DEA312" />
 
         </RelativeLayout>
+
     </ScrollView>
 
 </RelativeLayout>

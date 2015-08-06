@@ -13,17 +13,17 @@
 
         <RelativeLayout
             android:id="@+id/addmoney"
-            android:layout_width="fill_parent"
-            android:layout_height="404dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_layout" >
 
             <ImageView
                 android:id="@+id/imgcategory_addmoneybd"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="15dp"
@@ -58,71 +58,77 @@
                 android:layout_marginTop="52dp"
                 android:background="#DEA312" />
 
-            <TextView
-                android:id="@+id/tvcategoryname_addbudget"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/View02"
-                android:layout_alignLeft="@+id/View02"
-                android:gravity="center"
-                android:hint="Category Name"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:id="@+id/ednote_addmoneybd"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/View023"
-                android:layout_below="@+id/View03"
-                android:layout_marginTop="14dp"
-                android:ems="20"
-                android:gravity="center"
-                android:hint="Note"
-                android:inputType="textPostalAddress" 
-                android:textSize="22dp" />
-
-            <Button
-                android:id="@+id/btnSubmit_addmoneybd"
-                style="@style/btnStyleOrange"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/ednote_addmoneybd"
-                android:layout_marginTop="49dp"
-                android:text="Submit"
-                android:textSize="25dp" />
-
-            <Button
-                android:id="@+id/btncancel_budget_add"
-                style="@style/btnStyleOrange"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/btnSubmit_addmoneybd"
-                android:layout_marginTop="18dp"
-                android:text="Cancel"
-                android:textSize="25dp" />
-
             <ImageView
                 android:id="@+id/imgnote_addmoney"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignBottom="@+id/ednote_addmoneybd"
                 android:layout_alignLeft="@+id/imgcategory_addmoneybd"
                 android:src="@drawable/edit" />
 
             <EditText
-                android:id="@+id/edamount_addmoneybd"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/ednote_addmoneybd"
+                android:layout_width="175dp"
+                android:layout_height="35dp"
                 android:layout_alignParentRight="true"
-                android:layout_below="@+id/View02"
-                android:layout_toRightOf="@+id/imgcategory_addmoneybd"
+                android:layout_below="@+id/tvcategoryname_addbudget"
+                android:layout_marginRight="37dp"
+                android:layout_marginTop="72dp"
                 android:ems="20"
-                android:inputType="number"
+                android:gravity="center"
+                android:hint="Note"
+                android:inputType="textPostalAddress"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tvcategoryname_addbudget"
+                android:layout_width="175dp"
+                android:layout_height="35dp"
+                android:layout_alignLeft="@+id/ednote_addmoneybd"
+                android:layout_alignTop="@+id/imgcategory_addmoneybd"
+                android:gravity="center"
+                android:hint="Select Category"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edamount_addmoneybd"
+                android:layout_width="175dp"
+                android:layout_height="35dp"
+                android:layout_alignLeft="@+id/tvcategoryname_addbudget"
+                android:layout_below="@+id/tvcategoryname_addbudget"
+                android:ems="20"
                 android:gravity="center"
                 android:hint="Amount"
-                android:textSize="22dp" />
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:textSize="20dp" >
+				
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/btncancel_budget_add"
+                style="@style/btnStyleOrange"
+                android:layout_width="175dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignLeft="@+id/btnSubmit_addmoneybd"
+                android:layout_below="@+id/btnSubmit_addmoneybd"
+                android:text="Cancel"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btnSubmit_addmoneybd"
+                style="@style/btnStyleOrange"
+                android:layout_width="175dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/ednote_addmoneybd"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="29dp"
+                android:gravity="center"
+                android:text="Submit"
+                android:textSize="20dp" />
 
         </RelativeLayout>
 

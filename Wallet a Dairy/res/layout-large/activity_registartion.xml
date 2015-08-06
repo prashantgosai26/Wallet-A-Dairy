@@ -7,103 +7,35 @@
 
     <EditText
         android:id="@+id/etemail"
-        android:layout_width="250dp"
-        android:layout_height="25dp"
+        android:layout_width="375dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/tvCreateAccount"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:background="@drawable/rounded_edittext"
-        android:drawableLeft="@drawable/email"
         android:ems="10"
-        android:hint=" Email Address"
+        android:gravity="center"
+        android:hint="Enter Email Address"
         android:inputType="textEmailAddress"
         android:paddingLeft="5dp"
         android:textColor="#000000"
-        android:textSize="20dp" >
+        android:textSize="30dp" >
 
         <requestFocus />
     </EditText>
 
     <TextView
         android:id="@+id/tvCreateAccount"
-        android:layout_width="250dp"
-        android:layout_height="25dp"
+        android:layout_width="375dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:gravity="center"
+        android:textSize="35dp"
         android:text="Create an Account"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="250dp"
-        android:layout_height="25dp"
-        android:layout_alignLeft="@+id/etemail"
-        android:layout_below="@+id/etemail"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_edittext"
-        android:drawableLeft="@drawable/key"
-        android:ems="10"
-        android:hint=" Password"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp"
-        android:textColor="#000000"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/etConformPassword"
-        android:layout_width="250dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/etPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_edittext"
-        android:drawableLeft="@drawable/key"
-        android:ems="10"
-        android:hint=" Conform Password"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp"
-        android:textColor="#000000"
-        android:textSize="20dp" />
-
-    <Spinner
-        android:id="@+id/spSequerityQuestion"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_alignLeft="@+id/etConformPassword"
-        android:layout_below="@+id/etConformPassword"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_edittext"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:textColor="#000000" />
-
-    <EditText
-        android:id="@+id/etAnswer"
-        android:layout_width="250dp"
-        android:layout_height="25dp"
-        android:layout_alignLeft="@+id/spSequerityQuestion"
-        android:layout_below="@+id/spSequerityQuestion"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:gravity="center"
-        android:hint=" Answer"
-        android:textColor="#000000"
-        android:textSize="20dp" />
-
-    <Button
-        style="@style/btnStyleOrange"
-        android:id="@+id/btnSubmit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etAnswer"
-        android:layout_below="@+id/etAnswer"
-        android:layout_marginTop="5dp"
-        android:text="Submit"
-        android:textSize="25dp" />
 
     <Button
         style="@style/btnStyleOrange"
@@ -112,8 +44,77 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btnSubmit"
         android:layout_below="@+id/btnSubmit"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="50dp"
         android:text="Cancel"
-        android:textSize="25dp" />
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="375dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/etemail"
+        android:layout_below="@+id/etemail"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp"
+        android:textColor="#000000"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/etConformPassword"
+        android:layout_width="375dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Conform Password"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp"
+        android:textColor="#000000"
+        android:textSize="30dp" />
+
+    <Spinner
+        android:id="@+id/spSequerityQuestion"
+        android:layout_width="375dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/etConformPassword"
+        android:layout_below="@+id/etConformPassword"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edittext"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/etAnswer"
+        android:layout_width="375dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/spSequerityQuestion"
+        android:layout_below="@+id/spSequerityQuestion"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint=" Answer"
+        android:textColor="#000000"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        style="@style/btnStyleOrange"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etAnswer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Submit"
+        android:textSize="30dp" />
 
 </RelativeLayout>
