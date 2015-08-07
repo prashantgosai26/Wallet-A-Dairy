@@ -10,21 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".BudgetAdd" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/ibtnincome_home"
-        android:layout_below="@+id/ibtnincome_home"
-        android:text="Income"
-        android:layout_marginRight="8dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF" />
-
     <ImageButton
         android:id="@+id/ibtnincome_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="32dp"
@@ -34,61 +23,13 @@
 
     <ImageButton
         android:id="@+id/ibtnexpense_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/TextView01"
         android:layout_alignParentRight="true"
         android:layout_marginRight="39dp"
         android:onClick="onLoadButtonClick"
         android:src="@drawable/btn_expense" />
-
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView04"
-        android:layout_alignBottom="@+id/TextView04"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
-        android:text="Income Report"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/TextView04"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ibtnreport_home"
-        android:layout_alignRight="@+id/TextView01"
-        android:layout_below="@+id/ibtnreport_home"
-        android:text="Expense Report"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF" />
-
-    <ImageButton
-        android:id="@+id/ibtntransaction_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ibtnincome_home"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="103dp"
-        android:src="@drawable/btn_tran" />
-
-    <ImageButton
-        android:id="@+id/ibtnreport_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ibtntransaction_home"
-        android:layout_alignLeft="@+id/TextView01"
-        android:src="@drawable/btn_report" />
-
-    <ImageButton
-        android:id="@+id/ibtnbudget_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/btn_budget" />
 
     <TextView
         android:id="@+id/TextView03"
@@ -97,6 +38,7 @@
         android:layout_below="@+id/ibtnbudget_home"
         android:layout_centerHorizontal="true"
         android:text="Budget"
+        android:textSize="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
 
@@ -106,9 +48,75 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_alignLeft="@+id/ibtnexpense_home"
+        android:layout_toRightOf="@+id/ibtnbudget_home"
         android:text="Expense"
+        android:layout_marginLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/ibtnreport_home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/ibtnexpense_home"
+        android:layout_below="@+id/TextView03"
+        android:src="@drawable/btn_report" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ibtnreport_home"
+        android:layout_toRightOf="@+id/TextView03"
+        android:text="Expense Report"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/ibtnbudget_home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/TextView01"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/btn_budget" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/ibtntransaction_home"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:text="Income Report"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/ibtntransaction_home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/ibtnreport_home"
+        android:src="@drawable/btn_tran" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/ibtnincome_home"
+        android:layout_below="@+id/ibtnincome_home"
+        android:text="Income"
+        android:layout_marginRight="-10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
 
 </RelativeLayout>

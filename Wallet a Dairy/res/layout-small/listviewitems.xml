@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID" 
-        android:textSize="25dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/Displaydate"
@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="DATE" 
-        android:textSize="25dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/Displayname"
@@ -27,6 +27,6 @@
         android:layout_marginLeft="63dp"
         android:layout_toRightOf="@+id/id"
         android:text="NAME"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
     
 </RelativeLayout>

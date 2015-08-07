@@ -17,23 +17,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="Income"
+        android:textSize="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/tvIncomeTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lvAllIncomeRecord"
-        android:layout_below="@+id/lvAllIncomeRecord"
-        android:text="00000"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
         android:id="@+id/lvAllIncomeRecord"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/TextView06" >
     </ListView>
@@ -47,7 +38,19 @@
         android:layout_marginRight="24dp"
         android:layout_toLeftOf="@+id/tvIncomeTotal"
         android:text="Total"
+        android:textSize="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tvIncomeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/lvAllIncomeRecord"
+        android:text="00000"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
 
 </RelativeLayout>

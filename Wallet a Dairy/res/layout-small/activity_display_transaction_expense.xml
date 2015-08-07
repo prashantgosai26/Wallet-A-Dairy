@@ -18,12 +18,13 @@
         android:layout_alignParentTop="true"
         android:text="Expense"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
 
     <ListView
         android:id="@+id/lvAllExpenseRecord"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/TextView06" >
     </ListView>
@@ -37,7 +38,8 @@
         android:layout_marginTop="24dp"
         android:text="00000"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView1"
@@ -49,6 +51,7 @@
         android:layout_toLeftOf="@+id/tvExpenseTotal"
         android:text="Total"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
 
 </RelativeLayout>
